@@ -1,6 +1,6 @@
 # README
 
-# Pictweet DB設計
+# chat-space DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -8,9 +8,12 @@
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :messages
+<!-- 関連付け -->
+- has_many :messages 
+<!-- usersはたくさんのメッセージを持ってる -->
 - has_many :groups_users
 - has_many :groups,through: :groups_users
+<!-- groups_usersを通ってgroupsからデータを取る -->
 
 
 ## messagesテーブル
