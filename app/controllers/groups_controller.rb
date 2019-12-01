@@ -18,9 +18,9 @@ class GroupsController < ApplicationController
   end
 
   def update
-    if @group.update(group_paramas)
+    if @group.update(group_params)
       redirect_to root_path, notice: 'グループを更新しました'
-    elsed
+    else
       render :edit
   end
 end
