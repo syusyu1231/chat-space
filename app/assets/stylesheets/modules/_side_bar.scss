@@ -35,20 +35,33 @@
 
   }
     .groups{
+      text-decoration: none;
       height: calc(100vh - 100px);
       background-color: #2f3e51;
       padding: 20px 20px 0;
       overflow: scroll;
       box-sizing:border-box;
-      .group__group-name{
-        font-size: 11px;
-        margin-bottom: 5px;
-        }
-      .group__latest-mesaage{
-        font-size: 15px;
-       }
+      .group{
+          text-decoration: none; 
+          margin-bottom: 40px;
+          &__group-name{
+            text-decoration: none;
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: white; 
+            }
+          &__latest-mesaage{
+            text-decoration: none;
+            font-size: 11px;
+            color: white; 
+            }
+      }
     }
   }
+}
+
+.a {
+  text-decoration: none;
 }
 
 
