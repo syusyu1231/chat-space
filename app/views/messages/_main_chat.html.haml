@@ -7,19 +7,32 @@
     .top-header_side_menu
       Edit
   .messages
+    = render @messages
+    .upper-message
+      .upper-message__user-name
+        = messages.user.name
+      .upper-message__date
+        = message.created_at.strftime("%Y/%m/%d %H:%M")
+    .lower-message
+      - if message.content.present?
+        %p.lower-message__content
+          = message.content
+      = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
     .message_seo
       seo
     .message_neko
       neko
   .form
     .input_box
-      %input.input_box__text{placeholder: "type a message"}
-      .input_box__image
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input.hidden{type: "file"}
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = icon('fas', 'image', class: 'icon')
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
 
-      .submit_btn
-        %input.submit_btn__send{type: "submit", value: "Send"} 
+      -# .submit_btn
+      -#   %input.submit_btn__send{type: "submit", value: "Send"} 
       
   
