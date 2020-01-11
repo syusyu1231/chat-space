@@ -1,16 +1,19 @@
 .chat-main
   .top-header
-    .top-header_side_box
+    .top-header_side_box 
       sample
       %ul
       %li< Menber : murai
     .top-header_side_menu
-      Edit
+      = link_to 'Edit','/groups/:id/edit'
+      -# = link_to 'Edit',edit_group_path
+      -# (group)
+      -# Edit
   .messages
     .message_seo
-      seo
+      
     .message_neko
-      neko
+    
   .form
     .input_box
       %input.input_box__text{placeholder: "type a message"}
